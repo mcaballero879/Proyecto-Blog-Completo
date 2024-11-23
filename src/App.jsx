@@ -1,4 +1,4 @@
-
+import AuthProvider from './Contexto/AuthContext'
 import './App.css'
 import { BrowserRouter, Route, Router } from 'react-router-dom'
 import Encabezado from './Componentes/Encabezado'
@@ -9,6 +9,7 @@ function App() {
 
   return (
     <>
+      <AuthProvider>
       <BrowserRouter> {/* enrutador */}
       <Router>
        <Encabezado/> 
@@ -18,6 +19,8 @@ function App() {
       </Router>
       <PieDePagina/>
       </BrowserRouter> {/*cierre de enrutador */}
+      </AuthProvider>
+     
     </>
   )
 }
