@@ -11,6 +11,7 @@ const Header = () => {
             <Link to="/">Home</Link>
             {isLogin && <Link to="/mis-blogs">Blogs</Link> }
             {isLogin && <Link to="/mis-blogs">Crear Blog</Link> }
+            {isLogin && <Link to="/mis-blogs">Cerrar session</Link> }
             {!isLogin && <Link to="/login">Login</Link> }
             {!isLogin && <Link to="/register">register</Link> }
         </div>
