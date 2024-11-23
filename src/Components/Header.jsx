@@ -2,22 +2,19 @@
 // import useContext mas el contexto
 import { useContext, useEffect } from "react"
 import { AuthContext } from "../Context/AuthContext"
-
-
-
+import { Link } from "react-router-dom"
 const Header = () => {
-    const [isLogin, setIsLogged] = useContext(AuthContext)
-
-        useEffect( ()=> {
-            setIsLogged(true)
-        },[])
-
-    return(  
-        <header>
-            <p>Bienvenido al Blog de PLAYTEGHAME</p>
-            <h1>{isLogin}</h1>
-            
-        </header>                
+    const {isLogin} = useContext(AuthContext) 
+    
+    return(
+        <div>
+            <Link to="/">Home</Link>
+            {isLogin && <Link to="/mis-blogs">Blogs</Link> }
+            {isLogin && <Link to="/mis-blogs">Crear Blog</Link> }
+            {!isLogin && <Link to="/login">Login</Link> }
+            {!isLogin && <Link to="/register">register</Link> }
+        </div>
     )
+    
 }
 export default Header
