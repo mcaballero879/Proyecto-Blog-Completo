@@ -1,8 +1,8 @@
-import AuthProvider from './Contexto/AuthContext'
+import AuthProvider from './Context/AuthContext'
 import './App.css'
 import { BrowserRouter, Route, Router } from 'react-router-dom'
-import Encabezado from './Componentes/Encabezado'
-import PieDePagina from './Componentes/PieDePagina'
+import Header from './Componentes/Header'
+import Footer from './Componentes/Footer'
 
 function App() {
   
@@ -12,12 +12,12 @@ function App() {
       <AuthProvider>
       <BrowserRouter> {/* enrutador */}
       <Router>
-       <Encabezado/> 
+       <Header/> 
       <Route path='/' element={<Home/>}></Route>
       <Route path='/' element={<Home/>}></Route>
       <Route></Route>
       </Router>
-      <PieDePagina/>
+      <Footer/>
       </BrowserRouter> {/*cierre de enrutador */}
       </AuthProvider>
      

@@ -1,20 +1,20 @@
 // componente contexto, ser accedido por demás componentes
 import { createContext, useEffect, useState} from "react"
-i
-const AuthContext = createContext()
 
-const AuthProvider = ({Children}) => {
+export const AuthContext = createContext()
+
+export const AuthProvider = ({Children}) => {
     // estado logueado
-    const [isLogged, setIslogged] = useState(()=>{ 
-        const store = localStorage.getItem('isLogged') 
+    const [isLogged, setIsLogged] = useState(()=>{ 
+        const store = localStorage.getItem("isLogged") 
         return store ? store : false })
      
         useEffect( () => {
-            localStorage.setItem("isLogged", isLogged)
-        },[isLogged])
+            localStorage.setItem("isLogged", isLogged);
+        },[isLogged]);
    
      return(
-        <AuthContext.Provider value={{isLogged, setIslogged}}>
+        <AuthContext.Provider value={{isLogged, setIsLogged}}>
             {Children}
         </AuthContext.Provider>
         )       
